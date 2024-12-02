@@ -27,7 +27,8 @@ namespace MyPortfolio_MVC.Controllers
                 return View(model);
             }
             FormsAuthentication.SetAuthCookie(value.Email,false);
-            Session["nameSurname"] = value.Name + " " + value.Surname;
+           
+            Session["email"] = value.Email;
             return RedirectToAction("Index", "Category");
         }
     }
