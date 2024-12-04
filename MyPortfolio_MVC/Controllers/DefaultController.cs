@@ -1,6 +1,7 @@
 ﻿using MyPortfolio_MVC.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -48,6 +49,17 @@ namespace MyPortfolio_MVC.Controllers
             return PartialView(values);
         }
 
+        [HttpGet]
+        public PartialViewResult SendMesage() 
+        { 
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult SendMesage(TblMessage model)
+        {
+            return RedirectToAction("Index");
+        }
 
     }
 }
