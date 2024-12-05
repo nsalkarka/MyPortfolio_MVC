@@ -50,16 +50,28 @@ namespace MyPortfolio_MVC.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult SendMesage() 
+        public PartialViewResult SendMessage() 
         { 
             return PartialView();
         }
 
         [HttpPost]
-        public ActionResult SendMesage(TblMessage model)
+        public ActionResult SendMessage(TblMessage model)
         {
+            model.IsRead = false;
+            db.TblMessages.Add(model);
+            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
+
+        public PartialViewResult DefaultAbout()
+        {
+            var values=db.TblAbouts.ToList();
+            return PartialView(values);
+        }
+
+        
 
     }
 }
