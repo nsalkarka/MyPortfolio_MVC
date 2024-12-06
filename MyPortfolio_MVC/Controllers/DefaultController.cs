@@ -71,6 +71,12 @@ namespace MyPortfolio_MVC.Controllers
             return PartialView(values);
         }
 
+        public PartialViewResult DefaultSocialMedias()
+        {
+            var values=db.TblSocialMedias.ToList();
+            return PartialView(values); 
+        }
+
         
 
     }

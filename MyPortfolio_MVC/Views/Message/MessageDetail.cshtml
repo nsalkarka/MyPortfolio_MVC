@@ -9,10 +9,19 @@
     <tr>
         <td>Gönderen Ad Soyad:</td>
         <td>@Model.Name</td>
-        <br />
-        
+
+
+    </tr>
+    <tr>
+        <th>Gönderen Email: </th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Mesaj İçeriği: </th>
+        <td>@Model.MessageContent</td>
     </tr>
 
 </table>
 
-<a href="Message/Detail/@Model.MessageId" />
+<br />
+<a href="/Message/Index" class="btn btn-primary">Mesajlara Geri Dön</a>

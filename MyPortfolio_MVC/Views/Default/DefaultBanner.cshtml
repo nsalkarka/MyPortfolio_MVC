@@ -4,24 +4,21 @@
 
     <div class="row intro-content wide">
 
-    @foreach (var item in Model) {
-        <div class="column">
-            <div class="text-pretitle with-line">
-                @item.Title
+        @foreach (var item in Model)
+        {
+            <div class="column">
+                <div class="text-pretitle with-line">
+                    @item.Title
+                </div>
+
+                <h1 class="text-huge-title">
+                    @item.Description
+                </h1>
             </div>
+        }
 
-            <h1 class="text-huge-title">
-                @item.Description
-            </h1>
-        </div>
-    }
 
-        <ul class="intro-social">
-            <li><a href="#0">Behance</a></li>
-            <li><a href="#0">Twitter</a></li>
-            <li><a href="#0">Dribbble</a></li>
-            <li><a href="#0">Instagram</a></li>
-        </ul>
+        @Html.Action("DefaultSocialMedias")
 
     </div> <!-- end intro content -->
 
