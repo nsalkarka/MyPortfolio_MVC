@@ -93,12 +93,16 @@
             <!-- end s-about -->
             <!-- ### works
     ================================================== -->
-            @Html.Action("DefaultProjects")   <!-- end s-works -->
-            <!-- ### contact
-    ================================================== -->
-            @Html.Action("SendMessage")<!-- end contact -->
+            <section id="works" class="s-works target-section">
+                @Html.Action("DefaultProjects")   <!-- end s-works -->
+                @Html.Action("DefaultTestimonials")
+            </section>
+                <!-- ### contact
 
-        </main> <!-- end s-content -->
+    ================================================== -->
+                @Html.Action("SendMessage")<!-- end contact -->
+
+</main> <!-- end s-content -->
         <!-- ## footer
         ================================================== -->
         <footer class="s-footer">

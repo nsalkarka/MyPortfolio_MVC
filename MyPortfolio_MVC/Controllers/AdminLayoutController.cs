@@ -33,6 +33,8 @@ namespace MyPortfolio_MVC.Controllers
 
             ViewBag.nameSurname = admin.Name + " " + admin.Surname;
             ViewBag.image = admin.ImageURL;
+            
+
             return PartialView();
         }
 
@@ -43,7 +45,12 @@ namespace MyPortfolio_MVC.Controllers
 
             ViewBag.nameSurname = admin.Name + " " + admin.Surname;
             ViewBag.image = admin.ImageURL;
-            return PartialView();
+
+            var unreadmessages = db.TblMessages.Where(x => x.IsRead == false)
+                                              .OrderByDescending(x => x.MessageId)
+                                              .Take(3)
+                                              .ToList();
+            return PartialView(unreadmessages);
         }
 
         public PartialViewResult AdminLayoutFooter()

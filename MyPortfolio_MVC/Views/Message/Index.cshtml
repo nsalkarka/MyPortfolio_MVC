@@ -3,11 +3,16 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
     int count = 0;
+
+
 }
 
 <h2>Gelen Mesajlar</h2>
 
+
+
 <table class="table table-striped">
+
     <thead>
         <tr>
             <th>#</th>
@@ -19,24 +24,33 @@
         </tr>
     </thead>
     <tbody>
-       
+
         @foreach (var item in Model)
         {
-            count++;
-            <tr>
-                <td>@count</td>
-                <td>@item.Name</td>
-                <td>@item.Email</td>
-                <td>@item.Subject</td>
-                <td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-outline-danger">Sil</a></td>
-                <td><a href="/Message/MessageDetail/@item.MessageId" class="btn btn-outline-primary">
-    Mesajı Aç
-</a></td>
-            </tr>
+            
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Subject</td>
+                    <td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-outline-danger">Sil</a></td>
+                    <td>
+                        <a href="/Message/MessageDetail/@item.MessageId" class="btn btn-outline-primary">
+                            Mesajı Aç
+                        </a>
+                    </td>
+                </tr>
+           
 
-        }
+            }
+
+        
+
+
 
     </tbody>
-    </table>
+</table>
+<a class="btn btn-outline-primary" href="/Message/ReadMessage">Okunan Mesajları Göster</a> 
 
 

@@ -1,16 +1,21 @@
-﻿
+﻿@model Tuple<List<MyPortfolio_MVC.Models.TblContact>, List<MyPortfolio_MVC.Models.TblSocialMedia>>
+
+@{
+    var contact = Model.Item1;
+    var socialMedia = Model.Item2;
+}
 <section id="contact" class="s-contact target-section">
 
     <div class="row contact-top">
         <div class="column lg-12">
             <h2 class="text-pretitle">
-                Get In Touch
+                İletişime geçin
             </h2>
 
             <p class="h1">
-                I love to hear from you.
-                Whether you have a question or just
-                want to chat about design, tech & art — shoot me a message.
+                Sevinçle sizinle iletişime geçmenizi bekliyorum. 
+                Sorularınız varsa veya sohbet etmek isterseniz, 
+                lütfen bana mesaj atın.
             </p>
         </div>
     </div> <!-- end contact-top -->
@@ -19,25 +24,31 @@
 
     <div class="row contact-bottom">
         <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
-            <h3 class="text-pretitle">Reach me at</h3>
+            <h3 class="text-pretitle">Bana ulaşın</h3>
             <p class="contact-links">
-                <a href="mailto:sayhello@luther.com" class="mailtoui">sayhello@luther.com</a> <br>
-                <a href="tel:+1975432345">+197 543 2345</a>
+                @foreach(var item in contact) 
+                {
+                <a href="mailto:@item.Email" class="mailtoui">@item.Email</a> <br>
+                <a href="tel:@item.Phone">@item.Phone</a>
+                }
             </p>
         </div>
         <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
-            <h3 class="text-pretitle">Social</h3>
+            <h3 class="text-pretitle">Sosyal Medya</h3>
             <ul class="contact-social">
-                <li><a href="#0">Behance</a></li>
-                <li><a href="#0">Dribble</a></li>
-                <li><a href="#0">Twitter</a></li>
-                <li><a href="#0">Instagram</a></li>
-                <li><a href="#0">Github</a></li>
-            </ul>
+              
+                    @foreach (var a in socialMedia)
+                    {
+
+                        <li><a href="@a.Url">@a.Name</a></li>
+                    }
+                    
+                
+                </ul>
         </div>
         <div class="column lg-4 md-12 contact-block">
             <a href="#contact2" class="btn btn-primary">
-                Bana Ulaşın
+                Mesaj Bırakın
             </a>
 
         </div>

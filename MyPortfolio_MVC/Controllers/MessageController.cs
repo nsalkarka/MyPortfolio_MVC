@@ -12,8 +12,9 @@ namespace MyPortfolio_MVC.Controllers
         MyPortfolioEntities1 db = new MyPortfolioEntities1();
         public ActionResult Index()
         {
-            
-            var values=db.TblMessages.Where(n=> n.IsRead == false).ToList();
+
+            var values = db.TblMessages.Where(m => m.IsRead == false).ToList();
+
             return View(values);
         }
 
@@ -33,6 +34,12 @@ namespace MyPortfolio_MVC.Controllers
             value.IsRead = true;
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ReadMessage()
+        {
+            var values = db.TblMessages.Where(m=> m.IsRead==true).ToList();
+            return View(values);
         }
     }
 }

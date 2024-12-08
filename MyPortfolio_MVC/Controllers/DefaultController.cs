@@ -51,8 +51,12 @@ namespace MyPortfolio_MVC.Controllers
 
         [HttpGet]
         public PartialViewResult SendMessage() 
-        { 
-            return PartialView();
+        {
+            var contact = db.TblContacts.ToList();
+            var socialMedia = db.TblSocialMedias.ToList();
+
+            
+            return PartialView(Tuple.Create(contact, socialMedia));
         }
 
         [HttpPost]
@@ -75,6 +79,12 @@ namespace MyPortfolio_MVC.Controllers
         {
             var values=db.TblSocialMedias.ToList();
             return PartialView(values); 
+        }
+
+        public PartialViewResult DefaultTestimonials() 
+        { 
+            var values=db.TblTestimonials.ToList();
+            return PartialView(values);
         }
 
         

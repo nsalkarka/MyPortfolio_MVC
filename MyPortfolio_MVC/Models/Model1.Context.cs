@@ -31,12 +31,12 @@ namespace MyPortfolio_MVC.Models
         public virtual DbSet<TblCategory> TblCategories { get; set; }
         public virtual DbSet<TblContact> TblContacts { get; set; }
         public virtual DbSet<TblEducation> TblEducations { get; set; }
-        public virtual DbSet<TblExperience> TblExperiences { get; set; }
         public virtual DbSet<TblExpertis> TblExpertises { get; set; }
         public virtual DbSet<TblMessage> TblMessages { get; set; }
         public virtual DbSet<TblProject> TblProjects { get; set; }
         public virtual DbSet<TblSocialMedia> TblSocialMedias { get; set; }
         public virtual DbSet<TblTestimonial> TblTestimonials { get; set; }
         public virtual DbSet<TblAdmin> TblAdmins { get; set; }
+        public virtual DbSet<TblExperience> TblExperiences { get; set; }
     }
 }

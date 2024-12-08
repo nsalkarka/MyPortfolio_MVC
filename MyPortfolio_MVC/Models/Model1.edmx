@@ -222,17 +222,6 @@
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Degree" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TblExperience">
-          <Key>
-            <PropertyRef Name="ExperienceId" />
-          </Key>
-          <Property Name="ExperienceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartDate" Type="DateTime" Precision="3" />
-          <Property Name="EndDate" Type="DateTime" Precision="3" />
-          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="TblExpertis">
           <Key>
             <PropertyRef Name="ExpertiseId" />
@@ -300,7 +289,6 @@
           <EntitySet Name="TblCategories" EntityType="Self.TblCategory" />
           <EntitySet Name="TblContacts" EntityType="Self.TblContact" />
           <EntitySet Name="TblEducations" EntityType="Self.TblEducation" />
-          <EntitySet Name="TblExperiences" EntityType="Self.TblExperience" />
           <EntitySet Name="TblExpertises" EntityType="Self.TblExpertis" />
           <EntitySet Name="TblMessages" EntityType="Self.TblMessage" />
           <EntitySet Name="TblProjects" EntityType="Self.TblProject" />
@@ -311,6 +299,7 @@
             <End Role="TblProjects" EntitySet="TblProjects" />
           </AssociationSet>
           <EntitySet Name="TblAdmins" EntityType="MyPortfolioModel.TblAdmin" />
+          <EntitySet Name="TblExperiences" EntityType="MyPortfolioModel.TblExperience" />
         </EntityContainer>
         <EntityType Name="TblAdmin">
           <Key>
@@ -322,6 +311,17 @@
           <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblExperience">
+          <Key>
+            <PropertyRef Name="ExperienceId" />
+          </Key>
+          <Property Name="ExperienceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -391,18 +391,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblExperiences">
-            <EntityTypeMapping TypeName="MyPortfolioModel.TblExperience">
-              <MappingFragment StoreEntitySet="TblExperiences">
-                <ScalarProperty Name="ExperienceId" ColumnName="ExperienceId" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblExpertises">
             <EntityTypeMapping TypeName="MyPortfolioModel.TblExpertis">
               <MappingFragment StoreEntitySet="TblExpertises">
@@ -464,6 +452,18 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblExperiences">
+            <EntityTypeMapping TypeName="MyPortfolioModel.TblExperience">
+              <MappingFragment StoreEntitySet="TblExperiences">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ExperienceId" ColumnName="ExperienceId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

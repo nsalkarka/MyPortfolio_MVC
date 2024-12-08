@@ -1,0 +1,36 @@
+﻿@model MyPortfolio_MVC.Models.TblAbout
+@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Hakkımda Bölümü</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+
+    <br />
+    <div>
+
+        <label>Resim Yükleyin</label>
+        <input type="file" name="ImageFile" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Cv Yükleyin</label>
+        <input type="file" name="CvFile" class="form-control" />
+    </div>
+
+    <br />
+    <label>Ad Soyad</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" />
+    <br />
+    
+
+
+    <button class="btn btn-outline-primary">Referans Ekle</button>
+</form>
+
